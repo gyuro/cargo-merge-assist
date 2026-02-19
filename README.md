@@ -108,6 +108,12 @@ The repository includes a CI workflow that runs:
 - `cargo clippy -- -D warnings`
 - `cargo test`
 
+You can run all checks locally with:
+
+```bash
+make check
+```
+
 ---
 
 ## Current scope / limitations
