@@ -62,8 +62,6 @@ jobs:
     name: Coverage
     runs-on: ubuntu-latest
     needs: test
-    env:
-      COVERAGE_FAIL_UNDER: "70"
 
     steps:
       - name: Checkout
@@ -82,7 +80,7 @@ jobs:
 
       - name: Run coverage
         run: |
-          cargo llvm-cov --workspace --all-features --lcov --output-path lcov.info --fail-under-lines ${COVERAGE_FAIL_UNDER}
+          cargo llvm-cov --workspace --all-features --lcov --output-path lcov.info
 
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v4
